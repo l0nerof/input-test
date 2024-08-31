@@ -2,6 +2,9 @@
   font-family: $font-family;
   font-weight: 500;
   color: $gray-dark;
+  transition: all 0.3s ease;
+  white-space: normal;
+  word-wrap: break-word;
 
   // SIZE //
   &--extra-small {
@@ -28,5 +31,24 @@
 
   &--dark {
     color: $white;
+  }
+
+  // DISABLED MODE //
+
+  &--disabled {
+    cursor: not-allowed;
+    color: $placeholder-light;
+  }
+
+  // POSITION //
+
+  &--top {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &--side {
+    display: inline-block;
+    margin-right: 1rem;
   }
 }

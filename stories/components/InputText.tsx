@@ -1,7 +1,7 @@
-interface IInputTextProps {
+export interface IInputTextProps {
   id?: string;
   size?: "extra-small" | "medium" | "large" | "extra-large";
-  value?: string;
+  inputValue?: string;
   placeholder?: string;
   className?: string;
   darkMode?: boolean;
@@ -11,9 +11,9 @@ interface IInputTextProps {
 }
 
 function InputText({
-  id,
+  id = "email",
   size = "medium",
-  value = "",
+  inputValue = "",
   placeholder = "Input...",
   className,
   darkMode,
@@ -23,22 +23,24 @@ function InputText({
 }: IInputTextProps) {
   const mode = darkMode ? "input-text--dark" : "";
   const disabledMode = disabled ? "input-text--disabled" : "";
+  const quietMode = quiet ? "input-text--quiet" : "";
 
   return (
     <input
       id={id}
-      value={value}
+      value={inputValue}
       placeholder={placeholder}
       disabled={disabled}
       className={[
         "input-text",
         `input-text--${size}`,
+        quietMode,
         disabledMode,
         mode,
         className,
       ].join(" ")}
       style={{
-        border: `${quiet ? "none" : "1px solid #d1d1d6"}`,
+        // border: `${quiet ? "none" : "1px solid #d1d1d6"}`,
         textAlign: `${alignment}`,
       }}
     />

@@ -1,29 +1,39 @@
-interface IInputLabelProps {
-  id?: string;
+export interface IInputLabelProps {
+  htmlFor?: string;
   size?: "extra-small" | "medium" | "large" | "extra-large";
-  value: string;
+  labelValue: string;
   className?: string;
   darkMode?: boolean;
   position?: "top" | "side";
+  disabled?: boolean;
 }
 
 function InputLabel({
+  htmlFor = "email",
   size = "medium",
-  value = "Label",
+  labelValue = "Email",
   position = "top",
   className,
   darkMode,
+  disabled,
 }: IInputLabelProps) {
   const mode = darkMode ? "input-label--dark" : "";
+  const disabledMode = disabled ? "input-label--disabled" : "";
+  const positionClass = `input-label--${position}`;
 
   return (
     <label
-      htmlFor=""
-      className={["input-label", `input-label--${size}`, mode, className].join(
-        " "
-      )}
+      htmlFor={htmlFor}
+      className={[
+        "input-label",
+        `input-label--${size}`,
+        positionClass,
+        disabledMode,
+        mode,
+        className,
+      ].join(" ")}
     >
-      {value}
+      {labelValue}
     </label>
   );
 }

@@ -4,34 +4,49 @@
   color: $gray-dark;
   border-radius: 0.4rem;
   background-color: #fff;
+  border: 1px solid $gray-light;
+  outline: none;
+  transition: all 0.3s ease;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   &::placeholder {
     color: $placeholder-light;
+    transition: all 0.3s ease;
+  }
+
+  &:focus {
+    border: 1px solid $focus-light;
+    box-shadow: 0px 0px 0px 4px rgba(46, 144, 250, 0.24);
   }
 
   // SIZE //
   &--extra-small {
     font-size: 1.2rem;
-    line-height: 167%;
+    line-height: 1.67;
     padding: 0.2rem 1.2rem;
+    min-width: calc(1.5 * (1.67 * 1.2rem));
   }
 
   &--medium {
     font-size: 1.2rem;
-    line-height: 167%;
+    line-height: 1.67;
     padding: 0.8rem 1.2rem;
+    min-width: calc(1.5 * (1.67 * 1.2rem));
   }
 
   &--large {
     font-size: 1.4rem;
-    line-height: 171%;
+    line-height: 1.71;
     padding: 0.8rem 1.2rem 0.8rem 1.6rem;
+    min-width: calc(1.5 * (1.71 * 1.4rem));
   }
 
   &--extra-large {
     font-size: 1.4rem;
-    line-height: 171%;
+    line-height: 1.71;
     padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+    min-width: calc(1.5 * (1.71 * 1.4rem));
   }
 
   // DARK MODE //
@@ -44,6 +59,11 @@
     &::placeholder {
       color: $placeholder-dark;
     }
+
+    &:focus {
+      border: 1px solid $focus-dark;
+      box-shadow: 0px 0px 0px 4px rgba(46, 144, 250, 0.24);
+    }
   }
 
   // DISABLED MODE //
@@ -53,6 +73,17 @@
 
     &::placeholder {
       color: $gray-light;
+    }
+  }
+
+  // QUIET MODE //
+
+  &--quiet {
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border: 1px solid $gray-light;
     }
   }
 }
