@@ -11,6 +11,15 @@ $focus-light: #84caff;
 $focus-dark: #53b1fd;
 $asterisk: #d92d20;
 $icon: #a0a0ab;
+$error-border: #fda29b;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
 html {
   font-size: 62.5%;

@@ -1,0 +1,25 @@
+.input-annotation {
+  max-width: 18rem;
+  white-space: nowrap;
+
+  &--infoIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  &--helpText {
+    color: $border-dark;
+    font-family: $font-family;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    margin-top: 0.4rem;
+    transition: all 0.3s ease;
+
+    &--error {
+      color: $asterisk;
+    }
+  }
+}

@@ -2,23 +2,37 @@
   max-width: 18rem;
   white-space: nowrap;
 
+  &--label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
   &--iconBefore {
     position: absolute;
-    left: 0.5rem;
+    right: 15rem;
     width: 1.6rem;
     height: 1.6rem;
-    fill: $icon;
+    stroke: $icon;
+
+    &--error {
+      stroke: $asterisk;
+    }
   }
 
   &--iconAfter {
     width: 1.6rem;
     height: 1.6rem;
-    fill: $icon;
+    stroke: $icon;
+
+    &--error {
+      stroke: $asterisk;
+    }
   }
 
   &--shortkey {
     width: 3.2rem;
     height: 2rem;
-    fill: $icon;
   }
 }

@@ -94,6 +94,17 @@
     }
   }
 
+  // ERROR //
+
+  &--error {
+    border: 1px solid $error-border;
+
+    &:focus {
+      border: 1px solid $error-border;
+      box-shadow: 0px 0px 0px 4px rgba(240, 68, 56, 0.24);
+    }
+  }
+
   // ICONS //
 
   &--icons {
@@ -101,6 +112,6 @@
     right: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
 }

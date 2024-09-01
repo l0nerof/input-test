@@ -54,9 +54,14 @@ export interface IInputTextProps {
   required?: boolean;
 
   /**
-   * Require the input field.
+   * Content to be displayed inside the input field, such as icons.
    */
   children?: ReactNode;
+
+  /**
+   * Flag to indicate if the input field is in an error state.
+   */
+  error?: boolean;
 
   /**
    * Callback when the input field is focused.
@@ -85,6 +90,7 @@ function InputText({
   disabled = false,
   alignment = "left",
   required = false,
+  error,
   children,
   onClick,
   onChange,
@@ -93,6 +99,7 @@ function InputText({
   const mode = darkMode ? "input-text--dark" : "";
   const disabledMode = disabled ? "input-text--disabled" : "";
   const quietMode = quiet ? "input-text--quiet" : "";
+  const errorMode = error ? "input-text--error" : "";
 
   return (
     <div className="input-text--container">
@@ -105,6 +112,7 @@ function InputText({
         className={[
           "input-text",
           `input-text--${size}`,
+          errorMode,
           quietMode,
           disabledMode,
           mode,
