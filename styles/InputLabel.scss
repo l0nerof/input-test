@@ -51,4 +51,9 @@
     display: inline-block;
     margin-right: 1rem;
   }
+
+  // REQUIRED, OPTIONAL AND ASTERISK //
+  &--asterisk {
+    color: $asterisk;
+  }
 }
