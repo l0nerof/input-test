@@ -5,6 +5,8 @@
   transition: all 0.3s ease;
   white-space: normal;
   word-wrap: break-word;
+  word-break: break-word;
+  margin-bottom: 0.4rem;
 
   // SIZE //
   &--extra-small {
@@ -40,19 +42,37 @@
     color: $placeholder-light;
   }
 
+  // ASTERISK //
+  &--asterisk {
+    color: $asterisk;
+    margin-left: 0.2rem;
+  }
+
+  &--optional {
+    margin-left: 0.2rem;
+  }
+
+  &--required {
+    margin-left: 0.2rem;
+  }
+
+  // CHILDREN //
+
+  &--children {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   // POSITION //
 
   &--top {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &--side {
-    display: inline-block;
+    display: inline-flex;
     margin-right: 1rem;
-  }
-
-  // REQUIRED, OPTIONAL AND ASTERISK //
-  &--asterisk {
-    color: $asterisk;
   }
 }

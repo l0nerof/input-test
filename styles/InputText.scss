@@ -23,7 +23,7 @@
 
   &--container {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
   }
 
@@ -47,6 +47,10 @@
     line-height: 1.71;
     padding: 0.8rem 1.2rem 0.8rem 1.6rem;
     min-width: calc(1.5 * (1.71 * 1.4rem));
+
+    & + .input-text--icons > .input-group--iconBefore {
+      right: 28rem;
+    }
   }
 
   &--extra-large {
@@ -54,6 +58,10 @@
     line-height: 1.71;
     padding: 1.2rem 1.2rem 1.2rem 1.6rem;
     min-width: calc(1.5 * (1.71 * 1.4rem));
+
+    & + .input-text--icons > .input-group--iconBefore {
+      right: 28rem;
+    }
   }
 
   // DARK MODE //
@@ -113,5 +121,12 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
+  }
+
+  // CHILDREN //
+
+  &--children {
+    padding-left: 3.6rem;
+    padding-right: 7.6rem;
   }
 }

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 export interface IInputTextProps {
   id?: string;
@@ -100,6 +100,10 @@ function InputText({
   const disabledMode = disabled ? "input-text--disabled" : "";
   const quietMode = quiet ? "input-text--quiet" : "";
   const errorMode = error ? "input-text--error" : "";
+  const hasValidChildren = React.Children.toArray(children).some(
+    (child) => child !== undefined && child !== null
+  );
+  const childrenMode = hasValidChildren ? "input-text--children" : "";
 
   return (
     <div className="input-text--container">
@@ -117,6 +121,7 @@ function InputText({
           disabledMode,
           mode,
           className,
+          childrenMode,
         ].join(" ")}
         style={{
           textAlign: `${alignment}`,

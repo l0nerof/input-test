@@ -29,6 +29,11 @@ export interface IInputGroupProps extends IInputTextProps, IInputLabelProps {
    * Flag to indicate if the input field is in an error state.
    */
   error?: boolean;
+
+  /**
+   * Enable dark mode styling.
+   */
+  darkMode?: boolean;
 }
 
 function InputGroup({
@@ -37,16 +42,16 @@ function InputGroup({
   shortKey,
   error,
   children,
+  darkMode,
   ...props
 }: IInputGroupProps) {
   return (
     <div className="input-group">
-      <div className="input-group--label-wrapper">
-        <InputLabel {...props} />
+      <InputLabel {...props} darkMode={darkMode}>
         {children}
-      </div>
+      </InputLabel>
 
-      <InputText {...props}>
+      <InputText {...props} error={error} darkMode={darkMode}>
         {iconBefore && (
           <svg
             className={`input-group--iconBefore ${error ? "input-group--iconBefore--error" : ""}`}

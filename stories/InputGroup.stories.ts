@@ -23,5 +23,12 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Example: Story = {
-  args: {},
+  args: {
+    htmlFor: "email",
+    id: "email",
+    labelValue: "Email",
+    position: "top",
+    size: "medium",
+    alignment: "left",
+  },
 };

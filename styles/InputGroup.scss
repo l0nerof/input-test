@@ -1,20 +1,14 @@
 .input-group {
-  max-width: 18rem;
+  max-width: 19rem;
   white-space: nowrap;
-
-  &--label-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
 
   &--iconBefore {
     position: absolute;
-    right: 15rem;
+    right: 24.5rem;
     width: 1.6rem;
     height: 1.6rem;
     stroke: $icon;
+    cursor: pointer;
 
     &--error {
       stroke: $asterisk;
@@ -25,6 +19,7 @@
     width: 1.6rem;
     height: 1.6rem;
     stroke: $icon;
+    cursor: pointer;
 
     &--error {
       stroke: $asterisk;
@@ -34,5 +29,6 @@
   &--shortkey {
     width: 3.2rem;
     height: 2rem;
+    cursor: pointer;
   }
 }

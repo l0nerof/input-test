@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IInputLabelProps {
   htmlFor?: string;
 
@@ -51,6 +53,11 @@ export interface IInputLabelProps {
    * Use Asterisk mark in the label.
    */
   useAsterisk?: boolean;
+
+  /**
+   * Content to be displayed inside the input group, such as icons.
+   */
+  children?: ReactNode;
 }
 
 function InputLabel({
@@ -64,10 +71,12 @@ function InputLabel({
   required = false,
   optional = false,
   useAsterisk = false,
+  children,
 }: IInputLabelProps) {
   const mode = darkMode ? "input-label--dark" : "";
   const disabledMode = disabled ? "input-label--disabled" : "";
   const positionClass = `input-label--${position}`;
+  const childrenMode = children ? "input-label--children" : "";
 
   return (
     <label
@@ -79,17 +88,20 @@ function InputLabel({
         disabledMode,
         mode,
         className,
+        childrenMode,
       ].join(" ")}
     >
       {labelValue}
 
+      {children}
+
       {required && useAsterisk && (
-        <span className="input-label--asterisk"> *</span>
+        <span className="input-label--asterisk">*</span>
       )}
       {required && !useAsterisk && (
-        <span className="input-label--required"> (required)</span>
+        <span className="input-label--required">(required)</span>
       )}
-      {optional && <span className="input-label--optional"> (optional)</span>}
+      {optional && <span className="input-label--optional">(optional)</span>}
     </label>
   );
 }
